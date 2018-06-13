@@ -1,62 +1,38 @@
 # docker-compose-mtproxy
-With docker-compose file you can easy install telegram mtproto proxy and configure it.
+Deploy Telegram MTProto proxy with ease. Original work by iShift: https://github.com/iShift/docker-compose-mtproxy, Forked & improved so it works.
 
-# Docker
-If you have one, read next, if not:
+# Requirements
+* Docker
+* docker-compose
 
-`curl -sSL https://get.docker.com/ | sh`
+# Usage
+```
+$ git clone https://github.com/iShift/docker-compose-mtproxy.git
+$ cd docker-compose-mtproxy
+```
 
-install docker-compose
-On Ubuntu/Debian:
+Edit `config.env` first if you wish to change default settings. The proxy will work in default settings, so if you don't have any special needs you won't need to modify it.
 
-`sudo apt-get update`
+By default, proxy listens on port **943**. If you wish to change - edit *docker-compose.yml*:
+- "**943**:443" 
 
-`sudo apt-get install docker-compose`
+When you're done, run:
 
-or
+```
+$ docker-compose up -d
+```
 
-`sudo apt-get -y install python-pip`
+## Get logs and connection info
+```
+$ docker-compose logs
+```
 
-`sudo pip install docker-compose`
-
-
-# Clone repository
-`git clone https://github.com/iShift/docker-compose-mtproxy.git`
-
-# Edit config.env
-In that file you can configure:
-- TAG Value, for promote channel
-- Preset SECRET, UP TO 16
-- Secret count for generate, UP TO 16
-- Workers count
-
-# Change proxy port
-By default, proxy start at 443 port, if you want another - edit **docker-compose.yml**:
-- "**443**:443" 
-
-# Start proxy
-go to folder with that repository:
-
-`cd docker-compose-mtproxy`
-
-and run:
-
-`docker-compose up -d`
-
-# Get logs and connections info
-`docker-compose logs`
-
-
-# Stop proxy
-From repository folder:
-
-`docker-compose down`
-
-# Error ERROR: Couldn't connect to Docker daemon at http+docker://localhost - is it running?
-Use `sudo` with docker comands or add your account to docker group:
-`sudo usermod -aG docker $(whoami)`
+## Stop the proxy
+```
+$ docker-compose down
+```
 
 # Links
-Telegram docker hub: https://hub.docker.com/r/telegrammessenger/proxy/
-
-Source Code: https://github.com/TelegramMessenger/MTProxy
+Original work by iShift: https://github.com/iShift/docker-compose-mtproxy
+telegrammessenger/proxy @ Docker Hub: https://hub.docker.com/r/telegrammessenger/proxy/
+MTProxy: https://github.com/TelegramMessenger/MTProxy
