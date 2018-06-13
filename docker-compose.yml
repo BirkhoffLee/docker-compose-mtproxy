@@ -4,6 +4,7 @@ services:
   telegram-proxy:
     image: telegrammessenger/proxy:latest
     restart: unless-stopped
+    container_name: telegram-proxy
     ports:
       - "943:443"
     volumes:
