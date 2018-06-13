@@ -33,6 +33,6 @@ $ docker-compose down
 ```
 
 # Links
-Original work by iShift: https://github.com/iShift/docker-compose-mtproxy
-telegrammessenger/proxy @ Docker Hub: https://hub.docker.com/r/telegrammessenger/proxy/
+Original work by iShift: https://github.com/iShift/docker-compose-mtproxy  
+telegrammessenger/proxy @ Docker Hub: https://hub.docker.com/r/telegrammessenger/proxy/   
 MTProxy: https://github.com/TelegramMessenger/MTProxy
