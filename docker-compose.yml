@@ -7,6 +7,6 @@ services:
     ports:
       - "943:443"
     volumes:
-        - "$(pwd)/data:/data"
+        - "./data:/data"
     env_file:
         - ./config.env
