@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.3'
 
 services:
   telegram-proxy:
@@ -11,3 +11,7 @@ services:
         - "./data:/data"
     env_file:
         - ./config.env
+    ulimits:
+      nofile:
+        soft: 98304
+        hard: 98304
